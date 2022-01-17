@@ -5,26 +5,124 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pesquisar View Controller-->
+        <!--Pesquisar-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PesquisarViewControllerID" id="Y6W-OH-hqX" customClass="PesquisarViewController" customModule="App_News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PesquisarViewControllerID" title="Pesquisar" id="Y6W-OH-hqX" customClass="PesquisarViewController" customModule="App_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G1M-WX-GKN">
+                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zhx-pB-Co0">
+                                    <size key="itemSize" width="414" height="580"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pesquisa" id="X4g-uU-PLM" customClass="ModelCollectionViewCell" customModule="App_News" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="580"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oIi-tq-WYH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="580"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRm-1w-Bxe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="350" id="xzZ-ou-Tgq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZN-xd-IjM">
+                                                    <rect key="frame" x="0.0" y="436.5" width="414" height="7"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hgfhfgghfg gfgh fggh fgh dfh df hdf hdf hdfhdf hdfh dfhdf hdfh dfhdf" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njf-8u-tgu">
+                                                    <rect key="frame" x="31" y="353" width="352" height="76"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CRm-1w-Bxe" firstAttribute="top" secondItem="oIi-tq-WYH" secondAttribute="top" id="DgZ-PI-Aft"/>
+                                                <constraint firstItem="CRm-1w-Bxe" firstAttribute="leading" secondItem="oIi-tq-WYH" secondAttribute="leading" id="KGM-Zn-fjD"/>
+                                                <constraint firstAttribute="trailing" secondItem="CRm-1w-Bxe" secondAttribute="trailing" id="waI-Ke-7aY"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="580"/>
+                                        <connections>
+                                            <outlet property="posterNews" destination="CRm-1w-Bxe" id="Kkj-MJ-y9U"/>
+                                            <outlet property="titleNews" destination="Njf-8u-tgu" id="1I3-WQ-uKX"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Digite sua pesquisa" translatesAutoresizingMaskIntoConstraints="NO" id="G9Z-OX-29r">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G1M-WX-GKN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="TAV-pU-Gvj"/>
+                            <constraint firstItem="G9Z-OX-29r" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aXt-Vo-H9h"/>
+                            <constraint firstItem="G9Z-OX-29r" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="bJS-B7-OKG"/>
+                            <constraint firstItem="G9Z-OX-29r" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kF5-O8-iYD"/>
+                            <constraint firstAttribute="bottom" secondItem="G1M-WX-GKN" secondAttribute="bottom" id="kpH-1t-j0E"/>
+                            <constraint firstItem="G1M-WX-GKN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sIs-Ra-HdC"/>
+                            <constraint firstItem="G1M-WX-GKN" firstAttribute="top" secondItem="G9Z-OX-29r" secondAttribute="bottom" id="stx-QK-KHq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pesquisarCollectionView" destination="G1M-WX-GKN" id="RLx-cA-0MY"/>
+                        <outlet property="searchBarPesquisa" destination="G9Z-OX-29r" id="ref-Ua-8U4"/>
+                        <segue destination="CTX-HM-WPg" kind="show" identifier="pesquisaSegue" id="2Vb-6l-18o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="104"/>
+            <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="tAl-m8-okb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="CTX-HM-WPg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0ZE-C8-O6U"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txA-YQ-bi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="104"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="tOg-3m-efl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="hLL-La-1Ma" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6nO-eT-3Ns"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kc9-nA-N7H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165" y="508"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,13 +9,15 @@
         <!--Navigation Controller-->
         <scene sceneID="kUN-Rt-RAc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wza-dz-oby" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Wza-dz-oby" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g0z-YX-rJc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="g0z-YX-rJc">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8T6-w3-jui">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="hfZ-x7-lLB" kind="relationship" relationship="rootViewController" id="55f-lw-RT7"/>
                     </connections>
@@ -31,12 +33,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="0lT-zt-9ol"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fyD-uh-MaW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="jiv-fK-QGu" kind="relationship" relationship="viewControllers" id="x73-pb-o57"/>
                         <segue destination="2ba-Dw-HMD" kind="relationship" relationship="viewControllers" id="BPy-lY-WSv"/>
+                        <segue destination="frF-jU-3Ki" kind="relationship" relationship="viewControllers" id="9nF-wI-C1e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QH1-8a-z03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -51,7 +55,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBp-sL-iHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="290"/>
+            <point key="canvasLocation" x="1336" y="269"/>
         </scene>
         <!--Pesquisar-->
         <scene sceneID="43f-g2-jeA">
@@ -61,7 +65,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABu-kE-6A4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2049" y="279"/>
+            <point key="canvasLocation" x="1623" y="269"/>
+        </scene>
+        <!--Categoria-->
+        <scene sceneID="Odc-Y3-lf8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Categoria" id="frF-jU-3Ki" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="BkM-xM-ZuB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZ4-gq-D5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="269"/>
         </scene>
     </scenes>
 </document>
